@@ -4,7 +4,6 @@
 #include <gui_generated/screen_screen/screenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include "BitmapDatabase.hpp"
-#include <texts/TextKeysAndLanguages.hpp>
 
 screenViewBase::screenViewBase()
 {
@@ -12,42 +11,42 @@ screenViewBase::screenViewBase()
     __background.setPosition(0, 0, 1024, 600);
     __background.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
-    buttonWithLabel2.setXY(439, 371);
-    buttonWithLabel2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
-    buttonWithLabel2.setLabelText(touchgfx::TypedText(T_SINGLEUSEID3));
-    buttonWithLabel2.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
-    buttonWithLabel2.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    swipeContainer1.setXY(0, 0);
+    swipeContainer1.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_NORMAL_ID), touchgfx::Bitmap(BITMAP_BLUE_PAGEINDICATOR_DOT_INDICATOR_SMALL_HIGHLIGHT_ID));
+    swipeContainer1.setPageIndicatorXY(0, 0);
+    swipeContainer1.setSwipeCutoff(50);
+    swipeContainer1.setEndSwipeElasticWidth(50);
 
-    buttonWithIcon1.setXY(439, 204);
-    buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_BACK_ARROW_48_ID), touchgfx::Bitmap(BITMAP_BLUE_ICONS_BACK_ARROW_48_ID));
-    buttonWithIcon1.setIconXY(72, 7);
+    swipeContainer1Page2.setWidth(1024);
+    swipeContainer1Page2.setHeight(600);
 
-    toggleButton1.setXY(460, 122);
-    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
+    image1.setXY(0, 0);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_A1_ID));
+    swipeContainer1Page2.add(image1);
+    swipeContainer1.add(swipeContainer1Page2);
 
-    radioButton1.setXY(128, 393);
-    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_PRESSED_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_ACTIVE_ID), touchgfx::Bitmap(BITMAP_BLUE_CHECK_BUTTONS_CHECK_MARK_NORMAL_ID));
-    radioButton1.setSelected(false);
-    radioButton1.setDeselectionEnabled(false);
+    swipeContainer1Page3.setWidth(1024);
+    swipeContainer1Page3.setHeight(600);
 
-    slider1.setXY(206, 290);
+    slider1.setXY(297, 268);
     slider1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_INDICATORS_SLIDER_ROUND_NOB_ID));
     slider1.setupHorizontalSlider(2, 22, 0, 0, 621);
     slider1.setValueRange(0, 100);
     slider1.setValue(0);
+    swipeContainer1Page3.add(slider1);
+    swipeContainer1.add(swipeContainer1Page3);
 
-    image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_A1_ID));
-    image1.setAlpha(129);
+    swipeContainer1Page4.setWidth(1024);
+    swipeContainer1Page4.setHeight(600);
+
+    toggleButton1.setXY(131, 248);
+    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
+    swipeContainer1Page4.add(toggleButton1);
+    swipeContainer1.add(swipeContainer1Page4);
+    swipeContainer1.setSelectedPage(0);
 
     add(__background);
-    add(buttonWithLabel2);
-    add(buttonWithIcon1);
-    add(toggleButton1);
-    add(radioButton1);
-    add(slider1);
-    add(image1);
-    radioButtonGroup1.add(radioButton1);
+    add(swipeContainer1);
 }
 
 void screenViewBase::setupScreen()

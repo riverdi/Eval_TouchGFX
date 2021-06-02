@@ -160,18 +160,19 @@ int main(void)
 /* Configure QSPI: LPTR register with the low-power time out value */
 	WRITE_REG(QUADSPI->LPTR, 0xFFF);
 
- // DEMO_Initialize( );
-  BSP_Display_Enable( );
-
-
+  //DEMO_Initialize( );
  // while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 
-//	  DEMO_Run( );
+//	DEMO_Run( );
   }
+  BSP_Display_Enable( );
+
+
+
  // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
   /* USER CODE END 2 */
 
@@ -189,8 +190,12 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-//	  DEMO_Run( );
+//	DEMO_Run( );
   }
+  BSP_Display_Enable( );
+
+
+
  // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
   /* USER CODE END 2 */
 
@@ -208,8 +213,12 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-//	  DEMO_Run( );
+//	DEMO_Run( );
   }
+  BSP_Display_Enable( );
+
+
+
  // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
   /* USER CODE END 2 */
 
@@ -226,93 +235,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
-//	  DEMO_Run( );
   }
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-
-//	  DEMO_Run( );
-  }
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-
-//	  DEMO_Run( );
-  }
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-
-//	  DEMO_Run( );
-  }
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-
-//	  DEMO_Run( );
-  }
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-
   /* USER CODE END 3 */
 }
 
@@ -368,7 +291,7 @@ void SystemClock_Config(void)
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SDIO|RCC_PERIPHCLK_CLK48
                               |RCC_PERIPHCLK_LTDC;
   PeriphClkInitStruct.PLLSAI.PLLSAIN = 384;
-  PeriphClkInitStruct.PLLSAI.PLLSAIR = 3;
+  PeriphClkInitStruct.PLLSAI.PLLSAIR = 4;
   PeriphClkInitStruct.PLLSAI.PLLSAIP = RCC_PLLSAIP_DIV8;
   PeriphClkInitStruct.PLLSAIDivR = RCC_PLLSAIDIVR_2;
   PeriphClkInitStruct.Clk48ClockSelection = RCC_CLK48CLKSOURCE_PLLSAIP;

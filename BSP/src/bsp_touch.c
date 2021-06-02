@@ -196,8 +196,8 @@ BSP_CapTouch_Read( uint32_t * x, uint32_t * y )
     {
 
     	        uint8_t rx_buf[IPS_TP_REG_SIZE] = {0};
-    	        uint8_t tx_buf[4];
-    	        tx_buf[0] = IPS_TP_REG_OFFSET;
+    	       // uint8_t tx_buf[4];
+    	       // tx_buf[0] = IPS_TP_REG_OFFSET;
 
     	        if ( HAL_OK !=  HAL_I2C_Mem_Read(&hi2c1, IPS_TP_ADDRESS, 0x10, 0, rx_buf, 64, 100))
     	        	{

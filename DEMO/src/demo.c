@@ -248,9 +248,9 @@ DEMO_Initialize( void )
         for ( ;; )
             ;
     }
-    device_type = DEV_IPS_CAPACITIVE_TP;
+    device_type = DEV_RGB_CAPACITIVE_TP;
       // device_type =DEV_RGB_NO_TP;
-       device_size = DEV_7_0;
+       device_size = DEV_4_3;
     if ( ribus )
     {
         switch ( device_size )

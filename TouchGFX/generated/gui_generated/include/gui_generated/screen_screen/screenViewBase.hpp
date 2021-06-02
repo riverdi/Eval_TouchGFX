@@ -8,13 +8,11 @@
 #include <mvp/View.hpp>
 #include <gui/screen_screen/screenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/ButtonWithIcon.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
-#include <touchgfx/widgets/RadioButton.hpp>
-#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/containers/SwipeContainer.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/RadioButtonGroup.hpp>
+#include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
 
 class screenViewBase : public touchgfx::View<screenPresenter>
 {
@@ -32,13 +30,13 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::ButtonWithLabel buttonWithLabel2;
-    touchgfx::ButtonWithIcon buttonWithIcon1;
-    touchgfx::ToggleButton toggleButton1;
-    touchgfx::RadioButton radioButton1;
-    touchgfx::Slider slider1;
+    touchgfx::SwipeContainer swipeContainer1;
+    touchgfx::Container swipeContainer1Page2;
     touchgfx::Image image1;
-    touchgfx::RadioButtonGroup<1> radioButtonGroup1;
+    touchgfx::Container swipeContainer1Page3;
+    touchgfx::Slider slider1;
+    touchgfx::Container swipeContainer1Page4;
+    touchgfx::ToggleButton toggleButton1;
 
 private:
 

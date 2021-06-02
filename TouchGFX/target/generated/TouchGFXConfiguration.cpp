@@ -19,8 +19,7 @@
 #include <gui/common/FrontendHeap.hpp>
 #include <BitmapDatabase.hpp>
 #include <platform/driver/lcd/LCD16bpp.hpp>
-#include <touchgfx/hal/OSWrappers.hpp>
-#include <touchgfx/hal/NoDMA.hpp>
+#include <STM32DMA.hpp>
 #include <TouchGFXHAL.hpp>
 #include <STM32TouchController.hpp>
 #include <stm32f4xx_hal.h>
@@ -29,7 +28,7 @@ extern "C" void touchgfx_init();
 extern "C" void touchgfx_taskEntry();
 
 static STM32TouchController tc;
-static NoDMA dma;
+static STM32F4DMA dma;
 static LCD16bpp display;
 static ApplicationFontProvider fontProvider;
 static Texts texts;
