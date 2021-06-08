@@ -51,15 +51,38 @@
                     "IndicatorPos": 0,
                     "IndicatorMax": 621,
                     "IndicatorMin": 0,
-                    "ValueMax": 100,
+                    "ValueMax": 1280,
                     "ValueMin": 0,
-                    "InitValue": 0,
-                    "Style": "Style1",
+                    "InitValue": 1280,
                     "Name": "slider1",
-                    "X": 297,
-                    "Y": 268,
-                    "Width": 680,
+                    "X": 178,
+                    "Y": 514,
+                    "Width": 679,
                     "Height": 58,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "TextArea",
+                    "TextId": "SingleUseId1",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 255,
+                    "AutoSize": true,
+                    "LineSpacing": 0,
+                    "Name": "textArea1",
+                    "X": 452,
+                    "Y": 449,
+                    "Width": 172,
+                    "Height": 25,
                     "Visible": true,
                     "LockPosition": false,
                     "Draggable": false,
@@ -85,6 +108,94 @@
               {
                 "Components": [
                   {
+                    "Type": "Gauge",
+                    "Style": "Style1",
+                    "FileNameBackground": "__designer\\Blue_Gauges_original_gauge_background_style_00.png",
+                    "BackgroundOffsetX": 0,
+                    "BackgroundOffsetY": 0,
+                    "RotationCenterX": 125,
+                    "RotationCenterY": 125,
+                    "StartAngle": -90,
+                    "EndAngle": 90,
+                    "RangeMin": 0,
+                    "RangeMax": 100,
+                    "InitialValue": 50,
+                    "UseAnimation": false,
+                    "Easing": "Linear",
+                    "EasingOption": "In",
+                    "FileNameNeedle": "__designer\\Blue_Needles_original_gauge_needle_style_00.png",
+                    "NeedleRotationCenterX": 11,
+                    "NeedleRotationCenterY": 55,
+                    "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+                    "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+                    "UseArc": false,
+                    "ArcColor": {
+                      "Red": 20,
+                      "Green": 151,
+                      "Blue": 197
+                    },
+                    "SetArcPosition": false,
+                    "ArcX": 0,
+                    "ArcY": 0,
+                    "ArcWidth": 0,
+                    "ArcHeight": 0,
+                    "ArcRadius": 0,
+                    "ArcLineWidth": 0,
+                    "ArcCapStyle": "Butt",
+                    "ArcOnTopOfNeedle": false,
+                    "Alpha": 255,
+                    "Name": "gauge1",
+                    "X": 706,
+                    "Y": 42,
+                    "Width": 251,
+                    "Height": 251,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
+                    "Type": "CircleProgress",
+                    "FileNameProgress": "__designer\\Blue_ProgressIndicators_fill_medium_circle_indicator_fill_full.png",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "CenterX": 52,
+                    "CenterY": 52,
+                    "Radius": 50,
+                    "LineWidth": 0,
+                    "StartAngle": 0,
+                    "EndAngle": 360,
+                    "CapPrecision": "Butt",
+                    "Alpha": 255,
+                    "Style": "Style5",
+                    "FileNameBackground": "__designer\\Blue_ProgressIndicators_bg_medium_circle_indicator_bg_full.png",
+                    "IndicatorPositionX": 0,
+                    "IndicatorPositionY": 0,
+                    "IndicatorPositionWidth": 0,
+                    "IndicatorPositionHeight": 0,
+                    "ProgressRangeMin": 0,
+                    "ProgressRangeMax": 100,
+                    "ProgressRangeSteps": 0,
+                    "ProgressRangeStepsMin": 0,
+                    "ProgressInitialValue": 60,
+                    "Name": "circleProgress1",
+                    "X": 90,
+                    "Y": 115,
+                    "Width": 104,
+                    "Height": 104,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  },
+                  {
                     "Type": "ToggleButton",
                     "InitialStatePressed": false,
                     "Pressed": "__designer\\Blue_Togglebars_Toggle_round_large_button_ON.png",
@@ -92,8 +203,8 @@
                     "Alpha": 255,
                     "Style": "Style4",
                     "Name": "toggleButton1",
-                    "X": 131,
-                    "Y": 248,
+                    "X": 474,
+                    "Y": 442,
                     "Width": 128,
                     "Height": 38,
                     "Visible": true,
@@ -117,6 +228,39 @@
                 "Clickable": false,
                 "Fadeable": false,
                 "Moveable": false
+              },
+              {
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "RelativeFilename": "a2_riv.png",
+                    "Alpha": 255,
+                    "Name": "image2",
+                    "X": 0,
+                    "Y": 0,
+                    "Width": 1024,
+                    "Height": 377,
+                    "Visible": true,
+                    "LockPosition": false,
+                    "Draggable": false,
+                    "Clickable": false,
+                    "Fadeable": false,
+                    "Moveable": false
+                  }
+                ],
+                "Type": "Container",
+                "IsCacheableContainer": false,
+                "Name": "swipeContainer1Page5",
+                "X": 0,
+                "Y": 0,
+                "Width": 1024,
+                "Height": 600,
+                "Visible": true,
+                "LockPosition": false,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
               }
             ],
             "Type": "SwipeContainer",
@@ -128,7 +272,7 @@
             "IndicatorImageNormal": "__designer\\Blue_PageIndicator_dot_indicator_small_normal.png",
             "IndicatorImageHighlight": "__designer\\Blue_PageIndicator_dot_indicator_small_highlight.png",
             "EndSwipeElasticWidth": 50,
-            "SelectedPage": "swipeContainer1Page2",
+            "SelectedPage": "swipeContainer1Page5",
             "Style": "Style1",
             "Name": "swipeContainer1",
             "X": 0,
@@ -143,13 +287,44 @@
             "Moveable": false
           }
         ],
-        "Interactions": [],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider1"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Includes": "#include \"main.h\"",
+              "Code": "  TIM4->CCR2 = value;"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton1"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode"
+            }
+          }
+        ],
         "Name": "screen",
         "OverrideDefaultBufferSize": false,
-        "CanvasBufferSize": 0
+        "CanvasBufferSize": 15360
       }
     ],
     "CustomContainerDefinitions": [],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId1",
+        "IsResource": false
+      }
+    ],
     "Name": "RVTxx-demo",
     "Resolution": {
       "Width": 1024,

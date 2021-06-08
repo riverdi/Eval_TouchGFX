@@ -112,8 +112,8 @@ void Error_Handler(void);
 #define STL_RX_GPIO_Port GPIOG
 #define STL_TX_Pin GPIO_PIN_14
 #define STL_TX_GPIO_Port GPIOG
-#define LCD_GPIO1_Pin GPIO_PIN_7
-#define LCD_GPIO1_GPIO_Port GPIOB
+#define BL_PWM_Pin GPIO_PIN_7
+#define BL_PWM_GPIO_Port GPIOB
 #define SCL_Pin GPIO_PIN_8
 #define SCL_GPIO_Port GPIOB
 #define SDA_Pin GPIO_PIN_9

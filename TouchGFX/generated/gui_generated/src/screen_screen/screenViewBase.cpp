@@ -4,9 +4,15 @@
 #include <gui_generated/screen_screen/screenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include "BitmapDatabase.hpp"
+#include <texts/TextKeysAndLanguages.hpp>
+#include "main.h"
 
-screenViewBase::screenViewBase()
+
+screenViewBase::screenViewBase() :
+    sliderValueChangedCallback(this, &screenViewBase::sliderValueChangedCallbackHandler)
 {
+
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
     __background.setPosition(0, 0, 1024, 600);
     __background.setColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
@@ -28,22 +34,61 @@ screenViewBase::screenViewBase()
     swipeContainer1Page3.setWidth(1024);
     swipeContainer1Page3.setHeight(600);
 
-    slider1.setXY(297, 268);
+    slider1.setXY(178, 514);
     slider1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_BACK_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_SLIDER_ROUND_FILL_ID), touchgfx::Bitmap(BITMAP_BLUE_SLIDER_HORIZONTAL_LARGE_INDICATORS_SLIDER_ROUND_NOB_ID));
     slider1.setupHorizontalSlider(2, 22, 0, 0, 621);
-    slider1.setValueRange(0, 100);
-    slider1.setValue(0);
+    slider1.setValueRange(0, 1280);
+    slider1.setValue(1280);
+    slider1.setNewValueCallback(sliderValueChangedCallback);
     swipeContainer1Page3.add(slider1);
+
+    textArea1.setXY(452, 449);
+    textArea1.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID1));
+    swipeContainer1Page3.add(textArea1);
     swipeContainer1.add(swipeContainer1Page3);
 
     swipeContainer1Page4.setWidth(1024);
     swipeContainer1Page4.setHeight(600);
 
-    toggleButton1.setXY(131, 248);
+    gauge1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_GAUGES_ORIGINAL_GAUGE_BACKGROUND_STYLE_00_ID));
+    gauge1.setPosition(706, 42, 251, 251);
+    gauge1.setCenter(125, 125);
+    gauge1.setStartEndAngle(-90, 90);
+    gauge1.setRange(0, 100);
+    gauge1.setValue(50);
+    gauge1.setNeedle(BITMAP_BLUE_NEEDLES_ORIGINAL_GAUGE_NEEDLE_STYLE_00_ID, 11, 55);
+    gauge1.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    gauge1.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    swipeContainer1Page4.add(gauge1);
+
+    circleProgress1.setXY(90, 115);
+    circleProgress1.setProgressIndicatorPosition(0, 0, 104, 104);
+    circleProgress1.setRange(0, 100);
+    circleProgress1.setCenter(52, 52);
+    circleProgress1.setRadius(50);
+    circleProgress1.setLineWidth(0);
+    circleProgress1.setStartEndAngle(0, 360);
+    circleProgress1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_BG_MEDIUM_CIRCLE_INDICATOR_BG_FULL_ID));
+    circleProgress1Painter.setBitmap(touchgfx::Bitmap(BITMAP_BLUE_PROGRESSINDICATORS_FILL_MEDIUM_CIRCLE_INDICATOR_FILL_FULL_ID));
+    circleProgress1.setPainter(circleProgress1Painter);
+    circleProgress1.setValue(60);
+    swipeContainer1Page4.add(circleProgress1);
+
+    toggleButton1.setXY(474, 442);
     toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_OFF_ID), touchgfx::Bitmap(BITMAP_BLUE_TOGGLEBARS_TOGGLE_ROUND_LARGE_BUTTON_ON_ID));
     swipeContainer1Page4.add(toggleButton1);
     swipeContainer1.add(swipeContainer1Page4);
-    swipeContainer1.setSelectedPage(0);
+
+    swipeContainer1Page5.setWidth(1024);
+    swipeContainer1Page5.setHeight(600);
+
+    image2.setXY(0, 0);
+    image2.setBitmap(touchgfx::Bitmap(BITMAP_A2_RIV_ID));
+    swipeContainer1Page5.add(image2);
+    swipeContainer1.add(swipeContainer1Page5);
+    swipeContainer1.setSelectedPage(3);
 
     add(__background);
     add(swipeContainer1);
@@ -52,4 +97,15 @@ screenViewBase::screenViewBase()
 void screenViewBase::setupScreen()
 {
 
+}
+
+void screenViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+    if (&src == &slider1)
+    {
+        //Interaction1
+        //When slider1 value changed execute C++ code
+        //Execute C++ code
+          TIM4->CCR2 = value;
+    }
 }

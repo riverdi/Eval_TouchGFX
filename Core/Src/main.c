@@ -28,6 +28,7 @@
 #include "quadspi.h"
 #include "sdio.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "usb_otg.h"
 #include "gpio.h"
@@ -125,8 +126,10 @@ int main(void)
   MX_USB_OTG_FS_PCD_Init();
   MX_CRC_Init();
   MX_DMA2D_Init();
+  MX_TIM4_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
+
 
   // -------------------------------------- Initialization
   BSP_QSPI_EnableMemoryMappedMode();
@@ -160,16 +163,8 @@ int main(void)
 /* Configure QSPI: LPTR register with the low-power time out value */
 	WRITE_REG(QUADSPI->LPTR, 0xFFF);
 
-  //DEMO_Initialize( );
- // while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-
-//	DEMO_Run( );
-  }
   BSP_Display_Enable( );
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
 
 
 
@@ -192,50 +187,7 @@ int main(void)
 
 //	DEMO_Run( );
   }
-  BSP_Display_Enable( );
 
-
-
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-
-//	DEMO_Run( );
-  }
-  BSP_Display_Enable( );
-
-
-
- // BSP_CapTouch_Initialize( CAP_TOUCH_RGB_7_0 );
-  /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init();
-  /* Start scheduler */
-  osKernelStart();
-
-  /* We should never get here as control is now taken by the scheduler */
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-  }
   /* USER CODE END 3 */
 }
 

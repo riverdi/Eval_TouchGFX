@@ -12,7 +12,12 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/containers/Slider.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Gauge.hpp>
+#include <touchgfx/containers/progress_indicators/CircleProgress.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
+#include "main.h"
 
 class screenViewBase : public touchgfx::View<screenPresenter>
 {
@@ -35,11 +40,32 @@ protected:
     touchgfx::Image image1;
     touchgfx::Container swipeContainer1Page3;
     touchgfx::Slider slider1;
+    touchgfx::TextArea textArea1;
     touchgfx::Container swipeContainer1Page4;
+    touchgfx::Gauge gauge1;
+    touchgfx::CircleProgress circleProgress1;
+    touchgfx::PainterRGB565Bitmap circleProgress1Painter;
     touchgfx::ToggleButton toggleButton1;
+    touchgfx::Container swipeContainer1Page5;
+    touchgfx::Image image2;
 
 private:
 
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<screenViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 15360;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // SCREENVIEWBASE_HPP

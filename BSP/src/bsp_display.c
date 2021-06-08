@@ -427,7 +427,7 @@ BSP_Display_Enable( void )
     {
     case DISPLAY_RGB_2_8:
 
-        HAL_GPIO_WritePin( LCD_GPIO1_GPIO_Port, LCD_GPIO1_Pin,
+        HAL_GPIO_WritePin( GPIOB, GPIO_PIN_7,
                            GPIO_PIN_SET );    //    Backlight switch
         HAL_GPIO_WritePin( LCD_GPIO3_GPIO_Port, LCD_GPIO3_Pin,
                            GPIO_PIN_SET );    //    ON/OFF
@@ -443,7 +443,7 @@ BSP_Display_Enable( void )
     case DISPLAY_RGB_5_0:
     case DISPLAY_RGB_7_0:
 
-        HAL_GPIO_WritePin( LCD_GPIO1_GPIO_Port, LCD_GPIO1_Pin,
+        HAL_GPIO_WritePin( GPIOB,GPIO_PIN_7,
                            GPIO_PIN_SET );    //    Backlight switch
         HAL_GPIO_WritePin( LCD_GPIO3_GPIO_Port, LCD_GPIO3_Pin,
                            GPIO_PIN_SET );    //    ON/OFF
@@ -452,7 +452,7 @@ BSP_Display_Enable( void )
     case DISPLAY_IPS_4_3:
     case DISPLAY_IPS_5_0:
     case DISPLAY_IPS_7_0:
-        HAL_GPIO_WritePin( LCD_GPIO1_GPIO_Port, LCD_GPIO1_Pin,
+        HAL_GPIO_WritePin( GPIOB, GPIO_PIN_7,
                            GPIO_PIN_SET );    //    Backlight switch
         /*
          *  TODO:
