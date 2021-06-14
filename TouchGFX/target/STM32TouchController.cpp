@@ -27,9 +27,9 @@ void STM32TouchController::init()
 {
 
 	HAL_GPIO_WritePin( LCD_TPRST_GPIO_Port, LCD_TPRST_Pin, GPIO_PIN_SET );
-	HAL_Delay(10);
+	HAL_Delay(100);
 	HAL_GPIO_WritePin( LCD_TPRST_GPIO_Port, LCD_TPRST_Pin, GPIO_PIN_RESET );
-	HAL_Delay(10);
+	HAL_Delay(100);
 	HAL_GPIO_WritePin( LCD_TPRST_GPIO_Port, LCD_TPRST_Pin, GPIO_PIN_SET );
 	HAL_Delay(1000);
 
@@ -63,7 +63,7 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
         uint8_t tx_buf[4];
         tx_buf[0] = 1;
 
-        if ( HAL_OK !=  HAL_I2C_Mem_Read(&hi2c1, ( 0x41 << 1 ), 0x10, 0, rx_buf, 64, 100))
+        if ( HAL_OK !=  HAL_I2C_Mem_Read(&hi2c1, ( 0x41 << 1 ), 0x10, 1, rx_buf, 16, 100))
         	{
         		return false;
         	}
